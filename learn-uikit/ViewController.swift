@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -16,6 +18,13 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        let us = usernameTextField.text ?? ""
+        let pw = passwordTextField.text ?? ""
+        print("User name: \(us) - Password: \(pw)")
+        let vc2 = ViewController2()
+        self.present(vc2, animated: true)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,7 +48,6 @@ class ViewController: UIViewController {
         super.viewDidDisappear(animated)
         print("viewDidDisappear")
     }
-
-
+    
 }
 
